@@ -6,25 +6,25 @@ It operates by monitoring ambient temperature and humidity with an **AHTx0 senso
 
 The system offers two primary interfaces for monitoring and control:
 1.  A **Blynk** dashboard for remote access.
-2.  [cite_start]A **local Web Server** that provides a clean, modern UI for anyone on the same WiFi network[cite: 38, 83, 84, 85, 92].
+2.  A **local Web Server** that provides a clean, modern UI for anyone on the same WiFi network.
 
 
 ## 🌟 Key Features
 
-* **Humidity-Based Speed Control:** Fan speed is automatically adjusted based on humidity. [cite_start]The fan is off below a minimum threshold (`UMIDITA_MIN`) and scales up as it approaches the maximum threshold (`UMIDITA_MAX`)[cite: 53, 54].
-* [cite_start]**Smart Night Mode:** Automatically reduces the maximum fan speed during specific overnight hours to minimize noise[cite: 55, 57, 58, 59]. [cite_start]This requires an active internet connection for NTP time synchronization[cite: 6].
+* **Humidity-Based Speed Control:** Fan speed is automatically adjusted based on humidity. The fan is off below a minimum threshold (`UMIDITA_MIN`) and scales up as it approaches the maximum threshold (`UMIDITA_MAX`).
+***Smart Night Mode:** Automatically reduces the maximum fan speed during specific overnight hours to minimize noise. This requires an active internet connection for NTP time synchronization.
 * **Dual Interface (Blynk & Web):**
     * **Blynk Integration:**
-        * [cite_start]Sends all key data (Temp, Humidity, RPM, Target Speed, Night Mode) to the Blynk cloud[cite: 22, 23, 29].
-        * [cite_start]Uses an efficient `HTTPS batch/update` API call to send all sensor data in one request.
-        * [cite_start]Features a `manualOverride` switch on Virtual Pin `V0` to remotely force the fan off.
+        * Sends all key data (Temp, Humidity, RPM, Target Speed, Night Mode) to the Blynk cloud.
+        * Uses an efficient `HTTPS batch/update` API call to send all sensor data in one request.
+        * Features a `manualOverride` switch on Virtual Pin `V0` to remotely force the fan off.
     * **Local Web Server:**
-        * [cite_start]Hosts a responsive HTML/JavaScript webpage on the ESP8266's local IP address[cite: 38].
-        * [cite_start]The page provides a real-time dashboard displaying all sensor readings and system status[cite: 39, 40, 41].
-        * [cite_start]Includes a toggle button to switch between "Automatic" control and "Manual Override (Off)"[cite: 42, 43, 44].
-* [cite_start]**True RPM Feedback:** Reads the fan's tachometer (TACH) pin to measure and report the *actual* fan speed in RPM[cite: 3, 48, 49].
-* [cite_start]**Non-Blocking Operation:** Uses `BlynkTimer` to manage all tasks (sensor reads, control logic, data sending, WiFi checks), ensuring the main loop remains responsive[cite: 88, 89, 90, 91, 94].
-* [cite_start]**25kHz PWM Frequency:** Operates the fan at the standard 25kHz PWM frequency for precise and quiet control[cite: 4].
+        * Hosts a responsive HTML/JavaScript webpage on the ESP8266's local IP address.
+        * The page provides a real-time dashboard displaying all sensor readings and system status.
+        * Includes a toggle button to switch between "Automatic" control and "Manual Override (Off)".
+**True RPM Feedback:** Reads the fan's tachometer (TACH) pin to measure and report the *actual* fan speed in RPM.
+**Non-Blocking Operation:** Uses `BlynkTimer` to manage all tasks (sensor reads, control logic, data sending, WiFi checks), ensuring the main loop remains responsive.
+**25kHz PWM Frequency:** Operates the fan at the standard 25kHz PWM frequency for precise and quiet control.
 
 ---
 
