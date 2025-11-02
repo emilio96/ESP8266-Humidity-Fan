@@ -9,7 +9,7 @@ The system offers two primary interfaces for monitoring and control:
 2.  A **local Web Server** that provides a clean, modern UI for anyone on the same WiFi network.
 
 
-## 🌟 Key Features
+## Key Features
 
 * **Humidity-Based Speed Control:** Fan speed is automatically adjusted based on humidity. The fan is off below a minimum threshold (`UMIDITA_MIN`) and scales up as it approaches the maximum threshold (`UMIDITA_MAX`).
 ***Smart Night Mode:** Automatically reduces the maximum fan speed during specific overnight hours to minimize noise. This requires an active internet connection for NTP time synchronization.
@@ -28,7 +28,7 @@ The system offers two primary interfaces for monitoring and control:
 
 ---
 
-## 🛠️ Hardware & Build
+## Hardware & Build
 
 ### Required Components
 
@@ -51,7 +51,7 @@ This repository includes the `.stl` files for a custom 3D-printed enclosure. The
 
 ---
 
-## 📚 Libraries & Dependencies
+## Libraries & Dependencies
 
 * `ESP8266WiFi`
 * `Adafruit_AHTX0`
@@ -64,7 +64,7 @@ This repository includes the `.stl` files for a custom 3D-printed enclosure. The
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 Before uploading, you must set the user configuration variables at the top of the code file:
 
